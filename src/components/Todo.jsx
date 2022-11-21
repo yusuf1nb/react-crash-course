@@ -1,6 +1,6 @@
 import './Todo.css'
 
-function Todo({title, para}){
+function Todo({title, para, onTodoDelete }){
     function deleteTodo() {
 
     }
@@ -8,7 +8,7 @@ function Todo({title, para}){
         <div className="todo">
             <h2> { title } </h2>
             <p> { para } </p>
-            <button onClick={deleteTodo}>Delete</button>
+            <button onClick={onTodoDelete}>Delete</button>
         </div>
     )
 }

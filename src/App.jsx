@@ -1,25 +1,22 @@
-import './App.css';
-import Todo from './components/Todo.jsx'
-import Header from './components/Header.jsx'
-import Modal from './components/Modal.jsx'
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home.jsx'
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Nav from "./components/nav";
+import Users from "./pages/Users";
 
 function App() {
+  
   return (
     <>
-    <div>
-      <input type="text" onChange={(event) => {
-        console.log(event.target.value)
-      }}/>
-      <button>Add todo</button>
-    </div>
-      <Header />
-      <div className='todo__wrapper'>
-      <Todo title ="FInish Frontend Simplified" 
-      para = 'hello' />
-      <Todo title = "Finish Interview Section" para = 'hello'/>
-      <Todo title = "Land 100k JOB" para = 'hello'/>
-      </div>
-      <Modal title = 'Are you sure?'/>
+    <Router>
+      
+      <Routes>
+        <Route path="/" element= {<Home />}></Route>
+        <Route path="/users/:id" element={<Users />} />
+      </Routes>
+    </Router>
     </>
   );
 }
